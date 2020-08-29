@@ -1,0 +1,169 @@
+﻿@model SinavOlusturma.Entities.Exam
+@{
+    ViewData["Title"] = "EnterExam";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("EnterExam", "Exam", FormMethod.Post))
+{
+    <div class="row p-4">
+
+        <div class="col-md-12">
+            <div class="p-3">
+                <div class="form-group">
+                    <div class="row p-2">
+                        <div class="col-sm-12 text-center">
+                            <h1 class="mt-4">@Model.Name</h1>
+                        </div>
+                        <div class="col-sm-12 text-center">
+                            <h6>@Model.Article</h6>
+                        </div>
+
+                        <div class="col-sm-6 mt-2 text-center">
+                            <p>@Model.questions[0].QuestionText</p>
+                            <fieldset class="col-sm-12 text-center Question" id="question1">
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" value="@Model.questions[0].options[0]" name="question1" id="q1a">@Model.questions[0].options[0].OptionText
+                                    </label>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" value="@Model.questions[0].options[1]" name="question1" id="q1b">@Model.questions[0].options[1].OptionText
+                                    </label>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" value="@Model.questions[0].options[2]" name="question1" id="q1c">@Model.questions[0].options[2].OptionText
+                                    </label>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" value="@Model.questions[0].options[3]" name="question1" id="q1d">@Model.questions[0].options[3].OptionText
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-6 mt-2 text-center">
+                            <p>@Model.questions[1].QuestionText</p>
+                            <fieldset class="col-sm-12 text-center Question" id="question1">
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" value="@Model.questions[1].options[0].OptionText" name="question2" id="q2a">@Model.questions[1].options[0].OptionText
+                                    </label>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" value="@Model.questions[1].options[1].OptionText" name="question2" id="q2b">@Model.questions[1].options[1].OptionText
+                                    </label>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" value="@Model.questions[1].options[2].OptionText" name="question2" id="q2c">@Model.questions[1].options[2].OptionText
+                                    </label>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" value="@Model.questions[1].options[3].OptionText" name="question2" id="q2d">@Model.questions[1].options[3].OptionText
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-6 mt-2 text-center">
+                            <p>@Model.questions[2].QuestionText</p>
+                            <fieldset class="col-sm-12 text-center Question" id="question1">
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" value="@Model.questions[2].options[0].OptionText" name="question3">@Model.questions[2].options[0].OptionText
+                                    </label>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" value="@Model.questions[2].options[1].OptionText" name="question3">@Model.questions[2].options[1].OptionText
+                                    </label>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" value="@Model.questions[2].options[2].OptionText" name="question3">@Model.questions[2].options[2].OptionText
+                                    </label>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" value="@Model.questions[2].options[3].OptionText" name="question3">@Model.questions[2].options[3].OptionText
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-6 mt-2 text-center">
+                            <p>@Model.questions[3].QuestionText</p>
+                            <fieldset class="col-sm-12 text-center Question" id="question1">
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" value="@Model.questions[3].options[0].OptionText" name="question4">@Model.questions[3].options[0].OptionText
+                                    </label>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" value="@Model.questions[3].options[1].OptionText" name="question4">@Model.questions[3].options[1].OptionText
+                                    </label>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" value="@Model.questions[3].options[2].OptionText" name="question4">@Model.questions[3].options[2].OptionText
+                                    </label>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" value="@Model.questions[3].options[3].OptionText" name="question4">@Model.questions[3].options[3].OptionText
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-12 text-center mt-3">
+                            <input onclick="postData()" class="form-group btn btn-primary" type="submit" value="Sınavı Tamamla" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+<script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+<script>
+    function postData(x) {
+        var answerList = [];
+        var answer = {};
+        answer.Id = 0;
+        answer.ExamId = parseInt(@Model.Id);
+        answer.FormQuestionId = parseInt(@Model.questions[0].Id);
+
+        if (document.getElementById('q1a').checked) {
+            answer.FormQuestionOptionId = parseInt(@Model.questions[0].options[0].Id);
+            answer.OptionText = "@Model.questions[0].options[0].OptionText";
+        } else if (document.getElementById('q1b').checked) {
+            answer.FormQuestionOptionId = parseInt(@Model.questions[0].options[1].Id);
+            answer.OptionText = "@Model.questions[0].options[1].OptionText";
+        } else if (document.getElementById('q1c').checked) {
+            answer.FormQuestionOptionId = parseInt(@Model.questions[0].options[2].Id);
+            answer.OptionText = "@Model.questions[0].options[2].OptionText";
+        } else if (document.getElementById('q1d').checked) {
+            answer.FormQuestionOptionId = parseInt(@Model.questions[0].options[3].Id);
+            answer.OptionText = "@Model.questions[0].options[3].OptionText";
+        }
+        answerList.push(answer);
+
+        answerList.push(answer);
+
+        console.log(answer);
+        console.log(answerList);
+
+       var url = "@Url.Action("Exam","EnterExam")";
+
+        $.post(url, answer, function(res){
+
+        $("#SomeDivToShowTheResult").html(res);
+         });
+    }
+</script>

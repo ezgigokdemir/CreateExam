@@ -1,0 +1,383 @@
+﻿@model SinavOlusturma.Models.ContentViewModel
+
+@{
+    ViewData["Title"] = "CreateExam";
+}
+
+<h1>CreateExam</h1>
+
+@using (Html.BeginForm("CreateExam", "Exam", FormMethod.Post))
+{
+    <div class="row p-4">
+        <div class="col-md-10">
+            <div class="p-3">
+                <div class="form-group">
+                    <div class="row p-2">
+
+                        <div class="col-sm-12">
+
+                            <select id="select" onchange="showOptions(this)" style="width:100%">
+                                @{
+                                    foreach (var item in Model.contentList)
+                                    {
+                                        <option id="@item.Name" value="@item.Article" customAttribute="item.SomethingSpecial">
+                                            @item.Name
+                                        </option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="col-sm-12 mt-2">
+                            <textarea id="content" name="w3review" rows="8" cols="60" style="width:100%">text</textarea>
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                            @*@Html.TextBox("question.QuestionText", null, new { @style = "width:100%", placeholder = "Soru " + i })*@
+                            <input id="Soru1" type="text" name="name" placeholder="Soru 1" style="width:100%" />
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                            @*@Html.TextBox("option.OptionText", null, new { @style = "width:100%", placeholder = "A)" })*@
+                            <input id="Soru1A" type="text" name="name" placeholder="A)" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            @*@Html.TextBox("option.OptionText", null, new { @style = "width:100%", placeholder = "B)" })*@
+                            <input id="Soru1B" type="text" name="name" placeholder="B)" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            @*@Html.TextBox("option.OptionText", null, new { @style = "width:100%", placeholder = "C)" })*@
+                            <input id="Soru1C" type="text" name="name" placeholder="C)" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            @*@Html.TextBox("option.OptionText", null, new { @style = "width:100%", placeholder = "D)" })*@
+                            <input id="Soru1D" type="text" name="name" placeholder="D)" />
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                            <select onchange="showAnswer(this)" name="option.IsAnswer" class="align-content-center">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                            <input id="Soru2" type="text" name="name" placeholder="Soru 2" style="width:100%" />
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                            <input id="Soru2A" type="text" name="name" placeholder="A)" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input id="Soru2B" type="text" name="name" placeholder="B)" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input id="Soru2C" type="text" name="name" placeholder="C)" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input id="Soru2D" type="text" name="name" placeholder="D)" />
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                            <select onchange="showAnswer2(this)" name="option.IsAnswer" class="align-content-center">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                            <input id="Soru3" type="text" name="name" placeholder="Soru 3" style="width:100%" />
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                            <input id="Soru3A" type="text" name="name" placeholder="A)" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input id="Soru3B" type="text" name="name" placeholder="B)" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input id="Soru3C" type="text" name="name" placeholder="C)" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input id="Soru3D" type="text" name="name" placeholder="D)" />
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                            <select onchange="showAnswer3(this)" name="option.IsAnswer" class="align-content-center">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                            <input id="Soru4" type="text" name="name" placeholder="Soru 4" style="width:100%" />
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                            <input id="Soru4A" type="text" name="name" placeholder="A)" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input id="Soru4B" type="text" name="name" placeholder="B)" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input id="Soru4C" type="text" name="name" placeholder="C)" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input id="Soru4D" type="text" name="name" placeholder="D)" />
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                            <select onchange="showAnswer4(this)" name="option.IsAnswer" class="align-content-center">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <input onclick="postData()" class="form-group btn btn-primary" type="submit" value="Ekle"/>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <a href="javascript:void(0)" onclick="javascript:history.back();" class="btn btn-gray mr-1 mb-3" style="background:#d49566;color:white">
+                <span style="display:block;"><i class="fa fa-fw fa-arrow-circle-left fa-2x" style="color:white"></i></span> Geri
+            </a>
+        </div>
+    </div>
+
+}
+
+<script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+<script>
+    let selectEle = document.querySelector("#select");
+
+    document.addEventListener("DOMContentLoaded", function () {
+        function setVal() {
+            let val = selectEle.options[selectEle.selectedIndex].value;
+            //console.log("value", selectEle.options[selectEle.selectedIndex].value);
+            document.getElementById("content").innerText = val;
+        }
+        selectEle.addEventListener("change", function (event) {
+            setVal();
+        });
+        setVal();
+    });
+
+    var id = '';
+    function showOptions(s) {
+            id = s[s.selectedIndex].id
+            //console.log(s[s.selectedIndex].value); // get value
+    }
+
+    var answer = '';
+      function showAnswer(s) {
+          answer = s[s.selectedIndex].value
+          console.log("answer", answer);
+    }
+
+    var answer2 = '';
+      function showAnswer2(s) {
+          answer2 = s[s.selectedIndex].value
+    }
+
+    var answer3 = '';
+      function showAnswer3(s) {
+          answer3 = s[s.selectedIndex].value
+    }
+
+    var answer4 = '';
+      function showAnswer4(s) {
+          answer4 = s[s.selectedIndex].value
+    }
+
+    function postData() {
+        var model = {};
+        model.Name = id;
+        model.Article = selectEle.options[selectEle.selectedIndex].value
+
+        model.questions = [];
+        //question1
+        var question = {};
+        question.QuestionText = QuestionText = document.getElementById("Soru1").value;
+
+        question.options = [];
+        var option = {};
+        option.OptionText = document.getElementById("Soru1A").value;
+        question.options.push(option);
+        var IsAnswer1 = 0;
+        if (answer === 'A') {
+            IsAnswer1 = 1;
+        }
+        option.IsAnswer = IsAnswer1;
+
+        var option2 = {};
+        option2.OptionText = document.getElementById("Soru1B").value;
+        question.options.push(option2);
+        var IsAnswer2 = 0;
+        if (answer === 'B') {
+            IsAnswer2 = 1;
+        }
+        option2.IsAnswer = IsAnswer2;
+
+        var option3 = {};
+        option3.OptionText = document.getElementById("Soru1C").value;
+        question.options.push(option3);
+        var IsAnswer3 = 0;
+        if (answer === 'C') {
+            IsAnswer3 = 1;
+        }
+        option3.IsAnswer = IsAnswer3;
+
+        var option4 = {};
+        option4.OptionText = document.getElementById("Soru1D").value;
+        question.options.push(option4);
+        var IsAnswer4 = 0;
+        if (answer === 'D') {
+            IsAnswer4 = 1;
+        }
+        option4.IsAnswer = IsAnswer4;
+        model.questions.push(question);
+
+        //question2
+        var question = {};
+        question.QuestionText = QuestionText = document.getElementById("Soru2").value;
+
+        question.options = [];
+        var option = {};
+        option.OptionText = document.getElementById("Soru2A").value;
+        question.options.push(option);
+        var IsAnswer1 = 0;
+        if (answer2 === 'A') {
+            IsAnswer1 = 1;
+        }
+        option.IsAnswer = IsAnswer1;
+
+        var option2 = {};
+        option2.OptionText = document.getElementById("Soru2B").value;
+        question.options.push(option2);
+        var IsAnswer2 = 0;
+        if (answer2 === 'B') {
+            IsAnswer2 = 1;
+        }
+        option2.IsAnswer = IsAnswer2;
+
+        var option3 = {};
+        option3.OptionText = document.getElementById("Soru2C").value;
+        question.options.push(option3);
+        var IsAnswer3 = 0;
+        if (answer2 === 'C') {
+            IsAnswer3 = 1;
+        }
+        option3.IsAnswer = IsAnswer3;
+
+        var option4 = {};
+        option4.OptionText = document.getElementById("Soru2D").value;
+        question.options.push(option4);
+        var IsAnswer4 = 0;
+        if (answer2 === 'D') {
+            IsAnswer4 = 1;
+        }
+        option4.IsAnswer = IsAnswer4;
+
+        model.questions.push(question);
+
+        //question3
+        var question = {};
+        question.QuestionText = QuestionText = document.getElementById("Soru3").value;
+
+        question.options = [];
+        var option = {};
+        option.OptionText = document.getElementById("Soru3A").value;
+        question.options.push(option);
+        var IsAnswer1 = 0;
+        if (answer3 === 'A') {
+            IsAnswer1 = 1;
+        }
+        option.IsAnswer = IsAnswer1;
+
+        var option2 = {};
+        option2.OptionText = document.getElementById("Soru3B").value;
+        question.options.push(option2);
+        var IsAnswer2 = 0;
+        if (answer3 === 'B') {
+            IsAnswer2 = 1;
+        }
+        option2.IsAnswer = IsAnswer2;
+
+        var option3 = {};
+        option3.OptionText = document.getElementById("Soru3C").value;
+        question.options.push(option3);
+        var IsAnswer3 = 0;
+        if (answer3 === 'C') {
+            IsAnswer3 = 1;
+        }
+        option3.IsAnswer = IsAnswer3;
+
+        var option4 = {};
+        option4.OptionText = document.getElementById("Soru3D").value;
+        question.options.push(option4);
+        var IsAnswer4 = 0;
+        if (answer3 === 'D') {
+            IsAnswer4 = 1;
+        }
+        option4.IsAnswer = IsAnswer4;
+
+        model.questions.push(question);
+
+        //question4
+        var question = {};
+        question.QuestionText = QuestionText = document.getElementById("Soru4").value;
+
+        question.options = [];
+        var option = {};
+        option.OptionText = document.getElementById("Soru4A").value;
+        question.options.push(option);
+        var IsAnswer1 = 0;
+        if (answer4 === 'A') {
+            IsAnswer1 = 1;
+        }
+        option.IsAnswer = IsAnswer1;
+
+        var option2 = {};
+        option2.OptionText = document.getElementById("Soru4B").value;
+        question.options.push(option2);
+        var IsAnswer2 = 0;
+        if (answer4 === 'B') {
+            IsAnswer2 = 1;
+        }
+        option2.IsAnswer = IsAnswer2;
+
+        var option3 = {};
+        option3.OptionText = document.getElementById("Soru4C").value;
+        question.options.push(option3);
+        var IsAnswer3 = 0;
+        if (answer4 === 'C') {
+            IsAnswer3 = 1;
+        }
+        option3.IsAnswer = IsAnswer3;
+
+        var option4 = {};
+        option4.OptionText = document.getElementById("Soru4D").value;
+        question.options.push(option4);
+        var IsAnswer4 = 0;
+        if (answer4 === 'D') {
+            IsAnswer4 = 1;
+        }
+        option4.IsAnswer = IsAnswer4;
+
+        model.questions.push(question);
+
+        var url = "@Url.Action("Exam","CreateExam")";
+
+        $.post(url, model, function(res){
+
+        $("#SomeDivToShowTheResult").html(res);
+         });
+    }
+</script>

@@ -1,0 +1,42 @@
+﻿@model SinavOlusturma.Entities.Exam
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="p-3">
+    <div class="bg-body-light">
+        <div class="content content-full content-top-custom">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+                <h4 class="flex-sm-fill font-size-h2 font-w400 mt-2 mb-0 mb-sm-2">Sınav Silme İşlemi</h4>
+                <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
+                    <a href="javascript:void(0)" onclick="javascript:history.back();" class="btn btn-gray mr-1 mb-3" style="background:#d49566;color:white">
+                        <span style="display:block;"><i class="fa fa-fw fa-arrow-circle-left fa-2x" style="color:white"></i></span> Geri
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="block block-rounded block-bordered block-fx-shadow">
+            <div class="block-header block-header-default">
+                <h3 class="block-title"></h3>
+                <div class="block-options">
+                    <div class="block-options-item">
+                    </div>
+                </div>
+            </div>
+            <div class="block-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>Sınavı silmek istediğinize emin misiniz?</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <a class="btn btn-primary form-control form-control-alt" href="/exam/deleteconfirmedasync?id=@Model.Id">Sil</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

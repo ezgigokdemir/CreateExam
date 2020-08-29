@@ -1,0 +1,42 @@
+﻿@model IEnumerable<SinavOlusturma.Entities.Exam>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Sınav Listesi</h1>
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Sınav İsmi</th>
+                                <th>Tarih</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var exam in Model)
+                            {
+                                <tr>
+                                    <td>@exam.Id</td>
+                                    <td><a href="exam/enterexam?id=@exam.Id">@exam.Name</a></td>
+                                    <td>@exam.CreateDate</td>
+                                    <td class="text-center">
+                                        <div class="btn-group">
+                                            <a href="/exam/delete?id=@exam.Id" class="btn btn-sm text-light" style="background-color:#3d2b1f"><i class="fas fa-trash-alt"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
